@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!source
+!source/conf.py
+!source/index.rst
+!LICENSE
+!README.md
+!another_important_file.txt
