@@ -17,7 +17,6 @@ release = '1.0.0'
 extensions = [
     'myst_parser',
     'sphinx_copybutton',
-    'pygments',
 ]
 
 source_suffix = {
