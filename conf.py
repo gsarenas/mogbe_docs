@@ -16,6 +16,8 @@ release = '1.0.0'
 
 extensions = [
     'myst_parser',
+    'sphinx_copybutton',
+    'pygments',
 ]
 
 source_suffix = {
@@ -43,9 +45,17 @@ html_theme_options = {
     'vcs_pageview_mode': '',
     'style_nav_header_background': '#2980B9',
     # Toc options
-    'collapse_navigation': True,
+    'collapse_navigation': False,
     'sticky_navigation': True,
-    'navigation_depth': 4,
+    'navigation_depth': -1,
     'includehidden': True,
     'titles_only': False
 }
+
+# Custom CSS
+html_css_files = [
+    'custom.css',
+]
+
+def setup(app):
+    app.add_css_file('custom.css')

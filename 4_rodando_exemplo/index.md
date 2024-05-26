@@ -8,6 +8,10 @@
 cd ~/mogbe_ws && source install/setup.bash
 ```
 
+```{code-block} bash
+cd ~/mogbe_ws && source install/setup.bash
+```
+
 - Execute a simulação de teste no ambiente `wall.world`:
 
 ```bash
@@ -24,8 +28,12 @@ ros2 launch mogbe launch_sim_all.launch.py world:=./src/mogbe/worlds/wall.world
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cmd_vel_joy
 ```
 
-> [!TIP]
-> É necessário que o terminal com o `teleop_twist_keyboard` esteja em foco para controlar o robô manualmente.
+```{admonition} Dica
+---
+class: tip
+---
+É necessário que o terminal com o `teleop_twist_keyboard` esteja em foco para controlar o robô manualmente.
+```
 
 ## Rodando o robô físico
 
@@ -63,5 +71,9 @@ ros2 launch mogbe launch_robot_dev.launch.py
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cmd_vel_joy
 ```
 
-> [!TIP]
-> É necessário que o terminal com o `teleop_twist_keyboard` esteja em foco para controlar o robô manualmente.
+```{admonition} Dica
+---
+class: tip
+---
+É necessário que o terminal com o `teleop_twist_keyboard` esteja em foco para controlar o robô manualmente.
+```

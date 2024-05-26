@@ -1,16 +1,22 @@
 # Configuração Inicial
 
-Teste!
-
 ## Configuração de OS: Dev Machine
 
-> [!NOTE]
-> O projeto foi desenvolvido e implementado utilizando uma máquina virtual (guest machine) rodando Ubuntu 64-bit através do VMware Workstation 17 Player em um host machine Windows. A máquina virtual foi configurada utilizando definições padrão: 4 GB de memória RAM, 2 processadores, 40 GB de espaço em disco, etc.
+```{admonition} Nota
+---
+class: note
+---
+O projeto foi desenvolvido e implementado utilizando uma máquina virtual (guest machine) rodando Ubuntu 64-bit através do VMware Workstation 17 Player em um host machine Windows. A máquina virtual foi configurada utilizando definições padrão: 4 GB de memória RAM, 2 processadores, 40 GB de espaço em disco, etc.
+```
 
 - Certifique-se de que esteja rodando [Ubuntu Desktop versão Jammy Jellyfish 22.04.4 LTS](https://releases.ubuntu.com/jammy/).
 
-> [!IMPORTANT]
-> Devido a limitações da ferramenta RViz, é necessário configurar o nome de usuário da dev mechine como `dev`. Caso não seja possível, será necessário fazer alterações nos arquivos `camera.xacro` e `lidar.xacro` da pasta `description` no pacote `mogbe`.
+```{admonition} Atenção
+---
+class: attention
+---
+Devido a limitações da ferramenta RViz, é necessário configurar o nome de usuário da dev mechine como `dev`. Caso não seja possível, será necessário fazer alterações nos arquivos `camera.xacro` e `lidar.xacro` da pasta `description` no pacote `mogbe`.
+```
 
 - Instale o ROS 2 versão Humble Hawksbill seguindo o [tutorial](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) da documentação oficial. Prossiga até instalar `ros-humble-desktop` e `ros-dev-tools`, não é necessário instalar `ros-humble-base` para a dev machine.
 
@@ -174,7 +180,6 @@ ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[240,160]" -p c
 
 - Com o `nó` driver da câmera rodando no Raspberry Pi, visualize a imagem com:
 
- 
  ```bash
 ros2 run rqt_image_view rqt_image_view 
 ```
@@ -196,10 +201,14 @@ ros2 run rqt_image_view rqt_image_view
   - `RIGHT_MOTOR_FORWARD` em `motor_driver.h:linha 8`.
   - `LEFT_MOTOR_FORWARD` em `motor_driver.h:linha 9`.
 
-> [!IMPORTANT]
-> Garanta que a programação corresponda às conexões físicas. [Referência](https://github.com/gsarenas/mogbe/blob/main/img/mogbe_esquematico.png):
-> ![mogbe_esquemático](img/mogbe_esquematico.png)
-  
+```{admonition} Atenção
+---
+class: attention
+---
+Garanta que a programação corresponda às conexões físicas. [Referência](https://github.com/gsarenas/mogbe/blob/main/img/mogbe_esquematico.png):
+![mogbe_esquemático](img/mogbe_esquematico.png)
+```
+
 - Assumindo que você irá utilizar a mesma placa de desenvolvimento Arduino que o MOGBE, configure a IDE para compilar e gravar o código na placa:
 
   - `Ferramentas` -> `Placa` -> `Arduino AVR boards` -> `Arduino Nano`.

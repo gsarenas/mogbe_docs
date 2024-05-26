@@ -2,8 +2,12 @@
 
 Aqui temos uma "cola rápida" dos comandos que estão por trás do arquivos `.launch.py` caso necessite inicializar os processos de maneira separada. Há também alguns comandos adicionais de ferramentas e recursos (ROS e terceiros) que permitem melhor entendimento e/ou visualização do funcionamento do MOGBE. Caso queira explorá-los, reserve um tempo para estudá-los com calma, pois alguns possuem sequência e dependem de outros processos para funcionarem.
 
-> [!TIP]
-> Entenda valores entre `<` `>` como o tipo de dado esperado para os parâmetros. Exemplo: `use_sim_time:=<bool>` &#8594; `use_sim_time:=true` | `use_sim_time:=false`.
+```{admonition} Dica
+---
+class: tip
+---
+Entenda valores entre `<` `>` como o tipo de dado esperado para os parâmetros. Exemplo: `use_sim_time:=<bool>` &#8594; `use_sim_time:=true` | `use_sim_time:=false`.
+```
 
 | Descrição | Ambiente | Comando|
 | :-------: | :------: | :----: | 

@@ -6,7 +6,5 @@
 > A plataforma foi desenvolvida com o intuito de ser integrada às aulas de Robótica e Tópicos Especiais de Engenharia para promover um melhor entendimento de conceitos teóricos de robótica móvel com implementações práticas em ambiente simulado e real.
 > Apesar de sua proposta primária de ser integrada às aulas da FESA, o código-fonte da plataforma está disponível ao público geral pois ela foi desenvolvida a fim de permitir que entusiastas com conhecimentos em eletrônica e programação possam utilizá-la para aprofundar seus conhecimentos em robótica móvel ou até construírem sua própria solução.
 
-<!--<p float="left">
-  <img src="img/mogbe_render_small.png" width="227" height="240" />
-  <img src="img/demo_tcc_small.gif" width="363" /> 
-</p>-->
+| ![mogbe_render_small](img/mogbe_render_small.png) | ![demo_tcc_small](img/demo_tcc_small.gif) |
+| --- | --- |

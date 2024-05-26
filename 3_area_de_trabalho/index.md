@@ -11,20 +11,27 @@ Apesar desses pacotes serem referenciados como submódulos e o MOGBE depender de
 
 - Crie a área de trabalho ROS (lembre-se que o procedimento é o mesmo para o Raspberry Pi e a dev machine). 
 
-> [!IMPORTANT]
-> Caso precise usar um nome de pasta diferente de `mogbe_ws` será necessário fazer alterações nos arquivos `camera.xacro` e `lidar.xacro` da pasta `description` do pacote `mogbe`:
+```{admonition} Atenção
+---
+class: attention
+---
+Caso precise usar um nome de pasta diferente de `mogbe_ws` será necessário fazer alterações nos arquivos `camera.xacro` e `lidar.xacro` da pasta `description` do pacote `mogbe`
+```
 
 ```bash
 mkdir -p ~/mogbe_ws/src && cd ~/mogbe_ws/
 ```
 
-> [!IMPORTANT]
-> O `main` branch do repositório possui `worlds` mais elaborados para a simulação (tabela abaixo), o que torna o repositório mais pesado (~130 MB). 
+```{admonition} Atenção
+---
+class: attention
+---
+O `main` branch do repositório possui `worlds` mais elaborados para a simulação (tabela abaixo), o que torna o repositório mais pesado (~130 MB).
+```
 
 | [`hospital.world`](https://github.com/gsarenas/aws-robomaker-hospital-world)  | [`small_warehouse.world`](https://github.com/gsarenas/aws-robomaker-small-warehouse-world) |
 | :-----------: | :-----------: |
 | ![hospital.world](img/hospital_small.png) | ![small_warehouse.world](img/warehouse_small.png) |
-
 
 - Caso deseje utilizá-los, clone o repositório normalmente:
 
@@ -32,8 +39,12 @@ mkdir -p ~/mogbe_ws/src && cd ~/mogbe_ws/
 git clone https://github.com/gsarenas/mogbe.git src/mogbe
 ```
 
-> [!IMPORTANT]
-> Caso não necessite dessas simulações - ou esteja criando a área de trabalho do Raspberry Pi - e prefira um repositório mais leve (~20 MB), clone a branch `mogbe-light`:
+```{admonition} Atenção
+---
+class: attention
+---
+Caso não necessite dessas simulações - ou esteja criando a área de trabalho do Raspberry Pi - e prefira um repositório mais leve (~20 MB), clone a branch `mogbe-light`:
+```
 
 ```bash
 git clone --single-branch -b mogbe-light https://github.com/gsarenas/mogbe.git src/mogbe
