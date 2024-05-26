@@ -4,11 +4,10 @@
    contain the root `toctree` directive.
 
 Bem-vindo à documentação do MOGBE!
-=================================
+==================================
 
 - Apresentação
 - Direcionamento
-...
 
 .. toctree::
    :hidden:
@@ -28,3 +27,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
