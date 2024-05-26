@@ -3,9 +3,10 @@
 
 # But not these files...
 !.gitignore
+!.readthedocs.yaml
 !source
 !source/conf.py
 !source/index.rst
 !LICENSE
 !README.md
-!.readthedocs.yaml
+!requirements.txt
