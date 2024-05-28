@@ -1,5 +1,7 @@
 # Configuração de OS: Raspberry Pi
 
+## Ubuntu Server 22.04.4 LTS
+
 - Certifique-se de que esteja rodando Ubuntu Server versão Jammy Jellyfish 22.04.4 LTS. O sistema do Raspberry Pi será rodado no modo headless, ou seja, sem vídeo. É recomendado utilizar o `Raspberry Pi Imager` para fazer a instalação do sistema operacional: 
   - Selecione o modelo do dispositivo.
   - Em sistema operacional, selecione `Other general-purpose OS` -> `Ubuntu` -> `Ubuntu Server 22.04.4 LTS (64-bit)`.
@@ -15,6 +17,10 @@ sudo nano /etc/needrestart/needrestart.conf
 ```
 
 - Localize a linha com `#$nrconf{restart} = 'i';` e troque por `$nrconf{restart} = 'a';`. Isso fará com que o sistema reinicie os serviços necessários após atualizações automaticamente sem solicitar nossa intervenção.
+
+---
+
+## Memória swap para a RAM
 
 - Caso esteja utilizando um Raspberry Pi com 1 GB de memória RAM, é **extremamente** recomendado configurar uma memória swap para permitir que o sistema lide com tarefas mais intensivas. Para isso, vamos utilizar o próprio cartão SD (não é recomendado utilizar drives USB por não serem rápidos o suficiente). Crie um arquivo swap de 4 GB (escolha o tamanho de acordo com sua disponibilidade). Note que o caminho da pasta `pi` se dá em função do nome de usuário:
 
@@ -60,9 +66,38 @@ sudo nano /etc/fstab
 sudo reboot
 ```
 
+---
+
+## ROS 2 Humble
+
 - Siga o processo de instalação de ROS 2 (Humble Hawksbill) do [tutorial](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) da documentação oficial. Prossiga até instalar `ros-humble-ros-base` e `ros-dev-tools`. Não é necessário instalar `ros-humble-desktop` para o Raspberry Pi.
 
-- Para verificar a instalação, instale os pacotes de exemplo:
+```{admonition} Nota
+---
+class: note
+---
+Para evitar a necessidade de utilizar o comando `source /opt/ros/humble/setup.bash` toda vez que rodar uma aplicação ROS 2, configure as variáveis de ambiente do diretório de instalação de ROS 2 em seu arquivo `~/.bashrc`:
+```
+
+```bash
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+```
+
+- Em um novo terminal, verifique se as variáveis de ambiente foram configuradas corretamente:
+
+```bash
+printenv | grep -i ROS
+```
+
+- Você deve encontrar informações na saída do terminal como:
+
+```bash
+ROS_VERSION=2
+ROS_PYTHON_VERSION=3
+ROS_DISTRO=humble
+```
+
+- Para testar a instalação, instale os pacotes demo:
 
 ```bash
 sudo apt install ros-humble-demo-nodes-cpp ros-humble-demo-nodes-py
@@ -71,26 +106,16 @@ sudo apt install ros-humble-demo-nodes-cpp ros-humble-demo-nodes-py
 - Abra um novo terminal e rode o exemplo de `talker` em C++:
 
 ```bash
-source /opt/ros/humble/setup.bash && ros2 run demo_nodes_cpp talker
+ros2 run demo_nodes_cpp talker
 ```
 
 - Abra um novo terminal e rode o exemplo de `listener` em Python:
 
 ```bash
-source /opt/ros/humble/setup.bash && ros2 run demo_nodes_py listener
+ros2 run demo_nodes_py listener
 ```
 
 - Nesse exemplo, espera-se ver o `talker` publicando suas mensagens e o `listener` reproduzindo o que foi publicado.
-
-- Para evitar a necessidade de configurar as variáveis de ambiente do diretório de instalação de ROS toda vez que for rodar um programa, edite o seu `~/.bashrc`:
-
-```bash
-sudo nano ~/.bashrc
-```
-
-- Adicione `source /opt/ros/humble/setup.bash`à última linha do arquivo, feche `Ctrl+X`, salve `Y` e confirme `Enter`.
-
----
 
 ```{toctree}
 :hidden:

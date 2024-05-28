@@ -1,9 +1,5 @@
 # (Opcional) Configuração de câmera
 
-Comentário sobre a configuração da câmera.
-
----
-
 ## Raspberry Pi
 
 - Para configurar uma câmera, supondo que será usada um módulo de câmera Raspberry Pi, instale os drivers:
@@ -44,6 +40,8 @@ sudo reboot
 ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[240,160]" -p camera_frame_id:=camera_optical_link -p brightness:="60"
 ```
 
+---
+
 ## Dev Machine
 
 - Com o `nó` driver da câmera rodando no Raspberry Pi, visualize a imagem com:
@@ -51,5 +49,3 @@ ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[240,160]" -p c
  ```bash
 ros2 run rqt_image_view rqt_image_view 
 ```
-
----

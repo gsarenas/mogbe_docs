@@ -9,14 +9,7 @@ A área de trabalho (workspace) do projeto foi desenvolvida de modo que possa se
 
 Apesar desses pacotes serem referenciados como submódulos e o MOGBE depender deles para funcionar, a estrutura do projeto é organizada em múltiplos repositórios. O intuito dessa escolha é que, futuramente, estudantes de robótica móvel repliquem o projeto e identifiquem cada pacote como um recurso disponível. A partir disso, espera-se que derivem seus respectivos projetos de acordo com o que for necessário, não se prendendo a um repositório específico. Em projetos com ROS, é muito comum o desenvolvedor se basear em soluções já existentes e integrá-las para sua finalidade.
 
-- Crie a área de trabalho ROS (lembre-se que o procedimento é o mesmo para o Raspberry Pi e a dev machine). 
-
-```{admonition} Atenção
----
-class: attention
----
-Caso precise usar um nome de pasta diferente de `mogbe_ws` será necessário fazer alterações nos arquivos `camera.xacro` e `lidar.xacro` da pasta `description` do pacote `mogbe`
-```
+- Crie a área de trabalho ROS (lembre-se que o procedimento é o mesmo para o Raspberry Pi e a dev machine):
 
 ```bash
 mkdir -p ~/mogbe_ws/src && cd ~/mogbe_ws/
@@ -58,7 +51,6 @@ git clone https://github.com/gsarenas/diffdrive_arduino.git src/diffdrive_arduin
 git clone https://github.com/gsarenas/ldlidar_stl_ros2.git src/ldlidar_stl_ros2
 ```
 
-<!--
 - Inicie `rosdep` se ainda não tiver feito:
 
 ```bash
@@ -68,12 +60,10 @@ sudo rosdep init
 - Instale as dependências:
 
 ```bash
-architecture=$(uname -m) && \
-rosdep update && rosdep install --from-paths src --ignore-src -y --os=ubuntu:$architecture
+rosdep update && rosdep install --from-paths src -y --ignore-src
 ```
-
+<!--
 - `rosdep` deve ser suficiente para instalar os pacotes necessários. Ignore qualquer erro relacionado a pacotes não listados para a arquitetura `x86_64` ou `amd64`. Se houver qualquer outro erro, as dependências da dev machine se resolvem com:
--->
 
 - Instale as dependências da dev machine (somente dev machine):
 
@@ -91,9 +81,8 @@ ros-humble-image-transport-plugins \
 ros-humble-rqt-image-view
 ```
 
-<!--
 - No caso do Raspberry Pi, ignore qualquer erro relacionado a pacotes não listados para a arquitetura `aarch64` ou `arm64`. Caso tenha algum outro erro, as dependências do Raspberry Pi se resolvem com:
--->
+
 
 - Instale as dependências do Raspberry Pi (somente Raspberry Pi):
 
@@ -110,6 +99,7 @@ ros-humble-xacro \
 ros-humble-image-transport-plugins \
 ros-humble-v4l2-camera
 ```
+-->
 
 - Compile o repositório:
 

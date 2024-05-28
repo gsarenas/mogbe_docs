@@ -8,10 +8,10 @@
 cd ~/mogbe_ws && source install/setup.bash
 ```
 
-- Inicie o robô e sensor lidar:
+- Inicie o robô e sensor LiDAR:
 
 ```bash
-ros2 launch mogbe launch_robot_pi_all.launch.py
+ros2 launch mogbe mogbe_robot_pi_all.launch.py
 ```
 
 ## Dev Machine
@@ -25,13 +25,13 @@ cd ~/mogbe_ws && source install/setup.bash
 - Execute os `nós` de SLAM, navegação autônoma e visualização:
 
 ```bash
-ros2 launch mogbe launch_robot_dev.launch.py
+ros2 launch mogbe mogbe_robot_dev.launch.py
 ```
 
 - Para controle manual do MOGBE, é necessário abrir uma nova aba de terminal e executar o `nó` de comando `teleop`:
 
 ```bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cmd_vel_joy
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap /cmd_vel:=/cmd_vel_joy
 ```
 
 ```{admonition} Dica
