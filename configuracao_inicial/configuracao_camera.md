@@ -62,7 +62,7 @@ ros2 param set /v4l2_camera brightness "60"
 ---
 class: note
 ---
-Na data de escrita dessa seção da documentação do MOGBE (Maio de 2024), o driver `v4l2_camera` se mostrou relativamente instável em nossos testes com a câmera Raspberry Pi versão 1.3. Por isso, é recomendável executar o nó e passar os parâmetros de maneira separada ao invés de fazer tudo em um único comando com `ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[240,160]" -p camera_frame_id:=camera_optical_link -p brightness:="60"`.
+Na data de escrita dessa seção da documentação do MOGBE (Maio de 2024), o driver `v4l2_camera` se mostrou relativamente instável em nossos testes com a câmera Raspberry Pi versão 1.3. Por isso, é recomendável executar o `nó` e passar os `parâmetros` de maneira separada ao invés de fazer tudo em um único comando como em `ros2 run v4l2_camera v4l2_camera_node --ros-args -p image_size:="[240,160]" -p camera_frame_id:=camera_optical_link -p brightness:="60"`.
 ```
 
 ---
@@ -86,5 +86,5 @@ ros2 run rqt_image_view rqt_image_view
 ---
 class: tip
 ---
-Com o nó da câmera rodando no Raspberry Pi, é possível passar os parâmetros pela Dev Machine com `ros2 param set /v4l2_camera brightness "<int>"` e `ros2 param set /v4l2_camera image_size "[<int:largura,int:altura>]"`
+Com o `nó` da câmera rodando no Raspberry Pi, é possível passar os `parâmetros` pela Dev Machine com `ros2 param set /v4l2_camera brightness "<int>"` e `ros2 param set /v4l2_camera image_size "[<int:largura,int:altura>]"`
 ```
