@@ -1,6 +1,6 @@
-# Debug
+# Troubleshooting
 
-- Bugs e inconsistências podem gerar grandes frustrações e perda de tempo. Incluímos uma seção dedicada a debugging com alguns apontamentos rápidos.
+Bugs e inconsistências podem gerar grandes frustrações e perda de tempo. Incluímos uma seção dedicada a troubleshooting com alguns apontamentos rápidos.
 
 ---
 

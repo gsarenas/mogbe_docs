@@ -62,6 +62,6 @@ configuracao_inicial/index.md
 area_de_trabalho/index.md
 rodando_exemplo/index.md
 cheat_sheet/index.md
-debugging/index.md
+troubleshooting/index.md
 extras/index.md
 ```

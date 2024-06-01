@@ -19,7 +19,7 @@ ros2 launch mogbe mogbe_simulation_all.launch.py world:=./src/mogbe/worlds/wall.
 - Para controle manual do robô na simulação, abra um novo terminal e rode o `nó` de comando `teleop_twist_keyboard`:
 
 ```bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cmd_vel_joy
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap /cmd_vel:=/cmd_vel_joy
 ```
 
 ```{admonition} Dica
