@@ -21,7 +21,13 @@ class: note
 Vale lembrar que essa função independe das demais funções do MOGBE. Ou seja, não precisamos de um mapa ou da navegação autônoma funcionando. Basta encontrar uma linha verde com sua câmera e rodar o `nó`.
 ```
 
-- Para testar essa função, inicialize o MOGBE normalmente com a câmera, seja o arquivo `launch` completo (`mogbe_simulation_all.launch.py`) ou o mais simples (`mogbe_simulation.launch.py`). Caso esteja rodando a configuração mais simples, é necessário rodar o `twist_mux`:
+- Para testar essa função, inicialize o MOGBE normalmente com a câmera, seja o arquivo `launch` completo (`mogbe_simulation_all.launch.py`) ou o mais simples (`mogbe_simulation.launch.py`). Dentro da main branch do repositório do MOGBE, há um `world` com uma faixa verde compatível com a função segue faixa. Vamos rodar um exemplo com uma configuração mais simples:
+
+```bash
+ros2 launch mogbe mogbe_simulation.launch.py world:=./src/mogbe/worlds/small_warehouse.world
+```
+
+Caso esteja rodando a configuração mais simples, é necessário rodar o `twist_mux`:
 
 ```bash
 cd ~/mogbe_ws && ros2 run twist_mux twist_mux --ros-args --params-file ./src/mogbe/config/twist_mux.yaml --remap /cmd_vel_out:=/diff_cont/cmd_vel_unstamped
@@ -44,5 +50,8 @@ source install/setup.bash && ros2 run mogbe mogbe_line_follower.py
 class: tip
 ---
 Tenha o `teleop_twist_keyboard` preparado para assumir o controle do robô caso necessário. Com o `twist_mux` rodando, ambos os comandos são aceitos. Nesse caso, `teleop_twist_keyboard` tem maior prioridade por questão de segurança.
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap /cmd_vel:=/cmd_vel_joy
 ```
 
