@@ -31,7 +31,7 @@ Indices and tables
 
 # Bem-vindo à documentação do MOGBE!
 
-**MOGBE** - **Mo**bile **G**eneral Ro**b**ot for **E**ducation: um robô autônomo para aprendizagem de robótica móvel com ROS no ensino superior
+**MOGBE** - **Mo**bile **G**round Ro**b**ot for **E**ducation: um robô autônomo para aprendizagem de robótica móvel com ROS no ensino superior
 
 ```{eval-rst}
 .. image:: img/mogbe_render_small.png
