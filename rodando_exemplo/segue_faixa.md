@@ -24,13 +24,16 @@ Vale lembrar que essa função independe das demais funções do MOGBE. Ou seja,
 - Para testar essa função, inicialize o MOGBE normalmente com a câmera, seja o arquivo `launch` completo (`mogbe_simulation_all.launch.py`) ou o mais simples (`mogbe_simulation.launch.py`). Dentro da main branch do repositório do MOGBE, há um `world` com uma faixa verde compatível com a função segue faixa. Vamos rodar um exemplo com uma configuração mais simples:
 
 ```bash
+cd ~/mogbe_ws && \
+source install/setup.bash && \
 ros2 launch mogbe mogbe_simulation.launch.py world:=./src/mogbe/worlds/small_warehouse.world
 ```
 
 Caso esteja rodando a configuração mais simples, é necessário rodar o `twist_mux`:
 
 ```bash
-cd ~/mogbe_ws && ros2 run twist_mux twist_mux --ros-args --params-file ./src/mogbe/config/twist_mux.yaml --remap /cmd_vel_out:=/diff_cont/cmd_vel_unstamped
+cd ~/mogbe_ws && \
+ros2 run twist_mux twist_mux --ros-args --params-file ./src/mogbe/config/twist_mux.yaml --remap /cmd_vel_out:=/diff_cont/cmd_vel_unstamped
 ```
 
 - Na simulação, a câmera já é inicializada automaticamente, independente do caso. Então não é necessário fazer mais nada para rodar o segue faixa. Para o robô físico, siga os [passos para inicialização da câmera](https://mogbe.readthedocs.io/pt/latest/configuracao_inicial/configuracao_camera.html). Com a câmera e `twist_mux` funcionando, a preparação para o segue faixa está pronta. Antes de iniciá-lo, garanta que o executável do `nó` tenha as permissões necessárias:
