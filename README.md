@@ -1,6 +1,52 @@
 # mogbe_docs
 Repositório dedicado à documentação do robô MOGBE.
 
+## Passos para reprodução (build)
+
+Criar um diretório `docs`
+
+```bash
+mkdir docs && cd docs
+```
+
+Clonar o repositório `mogbe_docs` dentro de `docs`:
+
+```bash
+git clone git@github.com:gsarenas/mogbe_docs.git
+```
+
+```bash
+git clone https://github.com/gsarenas/mogbe_docs.git
+```
+
+Rodar o `sphinx-quickstart` para gerar o `Makefile`:
+
+```bash
+sphinx-quickstart
+```
+
+> Durante os prompts, é importante selecionar `y` quando perguntado se quer diretórios separados para `source` e `build`
+
+Após gerar tudo, basta alterar o caminho no Makefile the `source` para `mogbe_docs` na variável `SOURCEDIR`
+
+Para compilar tudo, rode:
+
+```bash
+make html
+```
+
+Para gerar uma nova build, exclua os arquivos em cache:
+
+```bash
+make clean
+```
+
+E repita o comando de build:
+
+```bash
+make html
+```
+
 <!--
 
 CHEATSHEET:
